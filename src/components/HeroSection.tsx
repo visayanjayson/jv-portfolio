@@ -1,6 +1,6 @@
 import React from "react";
 import { Button } from "./ui/button";
-import { ArrowRight, Download, Github, Linkedin, Twitter } from "lucide-react";
+import { ArrowRight, Download, Github, Linkedin, Briefcase } from "lucide-react";
 import { Avatar, AvatarFallback, AvatarImage } from "./ui/avatar";
 
 interface HeroSectionProps {
@@ -12,20 +12,20 @@ interface HeroSectionProps {
   socialLinks?: {
     github?: string;
     linkedin?: string;
-    twitter?: string;
+    upwork?: string;
   };
 }
 
 const HeroSection = ({
-  name = "John Doe",
-  title = "Software Engineer",
-  description = "I'm a passionate software engineer with expertise in building modern web applications. I specialize in React, TypeScript, and Node.js, creating responsive and user-friendly interfaces.",
-  imageUrl = "https://api.dicebear.com/7.x/avataaars/svg?seed=software-engineer",
-  resumeUrl = "#",
+  name = "Jayson Visayan",
+  title = "Senior Software Engineer / Netsuite Developer",
+  description = "I am a Software engineer from Philippines with 8 years of experience in Software Development and 6 years experience in Netsuite Development.",
+  imageUrl = "/profile.png",
+  resumeUrl = "/CV_Visayan-Jayson-B.pdf",
   socialLinks = {
-    github: "https://github.com",
-    linkedin: "https://linkedin.com",
-    twitter: "https://twitter.com",
+    github: "https://github.com/visayanjayson",
+    linkedin: "https://www.linkedin.com/in/jayson-visayan-b7509415a/",
+    upwork: "https://www.upwork.com/freelancers/~01fe567ce7e2067094",
   },
 }: HeroSectionProps) => {
   return (
@@ -44,8 +44,8 @@ const HeroSection = ({
             </p>
             <div className="flex flex-wrap gap-4 pt-4">
               <Button asChild>
-                <a href="#projects">
-                  View Projects <ArrowRight className="ml-2 h-4 w-4" />
+                <a href="#experience">
+                  View Experiences <ArrowRight className="ml-2 h-4 w-4" />
                 </a>
               </Button>
               <Button variant="outline" asChild>
@@ -79,15 +79,15 @@ const HeroSection = ({
                   </a>
                 </Button>
               )}
-              {socialLinks.twitter && (
+              {socialLinks.upwork && (
                 <Button variant="ghost" size="icon" asChild>
                   <a
-                    href={socialLinks.twitter}
+                    href={socialLinks.upwork}
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label="Twitter Profile"
                   >
-                    <Twitter className="h-5 w-5" />
+                    <Briefcase className="h-5 w-5" />
                   </a>
                 </Button>
               )}

@@ -31,7 +31,7 @@ const ProjectsSection = ({
   projects = defaultProjects,
 }: ProjectsSectionProps) => {
   return (
-    <section id="projects" className="py-16 bg-background w-full">
+    <section id="projects" className="bg-background">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <h2 className="text-3xl font-bold mb-2">Projects</h2>

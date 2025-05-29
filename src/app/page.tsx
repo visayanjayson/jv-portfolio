@@ -2,9 +2,10 @@ import React from "react";
 import HeroSection from "@/components/HeroSection";
 import ProjectsSection from "@/components/ProjectsSection";
 import ExperienceSection from "@/components/ExperienceSection";
+import SkillSection from "@/components/SkillSection";
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
-import { Mail, Github, Linkedin, Twitter } from "lucide-react";
+import { Mail, Smartphone, Github, Linkedin, Briefcase } from "lucide-react";
 
 export default function Home() {
   return (
@@ -15,86 +16,21 @@ export default function Home() {
       <Separator className="my-8 w-[80%] max-w-5xl" />
 
       {/* Projects Section */}
-      <section id="projects" className="w-full max-w-6xl px-4 py-12">
-        <h2 className="text-3xl font-bold text-center mb-12">My Projects</h2>
+      {/* <section id="projects" className="w-full max-w-6xl px-4 py-12">
         <ProjectsSection />
-      </section>
+      </section> */}
 
-      <Separator className="my-8 w-[80%] max-w-5xl" />
+      {/* <Separator className="my-8 w-[80%] max-w-5xl" /> */}
 
       {/* Skills Section */}
+
       <section id="skills" className="w-full max-w-6xl px-4 py-12">
-        <h2 className="text-3xl font-bold text-center mb-12">Skills</h2>
-
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {/* Languages */}
-          <div className="bg-card rounded-xl p-6 shadow-md">
-            <h3 className="text-xl font-semibold mb-4">Languages</h3>
-            <div className="flex flex-wrap gap-2">
-              {[
-                "JavaScript",
-                "TypeScript",
-                "Python",
-                "Java",
-                "HTML",
-                "CSS",
-              ].map((skill) => (
-                <span
-                  key={skill}
-                  className="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm"
-                >
-                  {skill}
-                </span>
-              ))}
-            </div>
-          </div>
-
-          {/* Frameworks */}
-          <div className="bg-card rounded-xl p-6 shadow-md">
-            <h3 className="text-xl font-semibold mb-4">Frameworks</h3>
-            <div className="flex flex-wrap gap-2">
-              {[
-                "React",
-                "Next.js",
-                "Node.js",
-                "Express",
-                "TailwindCSS",
-                "Django",
-              ].map((skill) => (
-                <span
-                  key={skill}
-                  className="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm"
-                >
-                  {skill}
-                </span>
-              ))}
-            </div>
-          </div>
-
-          {/* Tools */}
-          <div className="bg-card rounded-xl p-6 shadow-md">
-            <h3 className="text-xl font-semibold mb-4">Tools</h3>
-            <div className="flex flex-wrap gap-2">
-              {["Git", "Docker", "AWS", "Firebase", "VS Code", "Figma"].map(
-                (skill) => (
-                  <span
-                    key={skill}
-                    className="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm"
-                  >
-                    {skill}
-                  </span>
-                ),
-              )}
-            </div>
-          </div>
-        </div>
+        <SkillSection />
       </section>
-
       <Separator className="my-8 w-[80%] max-w-5xl" />
 
       {/* Experience Section */}
       <section id="experience" className="w-full max-w-6xl px-4 py-12">
-        <h2 className="text-3xl font-bold text-center mb-12">Experience</h2>
         <ExperienceSection />
       </section>
 
@@ -107,7 +43,7 @@ export default function Home() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {/* Contact Form */}
           <div className="bg-card rounded-xl p-6 shadow-md">
-            <form className="space-y-4">
+            <form action="https://formspree.io/f/xdkgqjba" method="POST" className="space-y-4">
               <div>
                 <label
                   htmlFor="name"
@@ -117,6 +53,7 @@ export default function Home() {
                 </label>
                 <input
                   type="text"
+                  name="name"
                   id="name"
                   className="w-full rounded-md border border-input bg-background px-3 py-2"
                   placeholder="Your name"
@@ -132,6 +69,7 @@ export default function Home() {
                 </label>
                 <input
                   type="email"
+                  name="email"
                   id="email"
                   className="w-full rounded-md border border-input bg-background px-3 py-2"
                   placeholder="your.email@example.com"
@@ -147,6 +85,7 @@ export default function Home() {
                 </label>
                 <textarea
                   id="message"
+                  name="message"
                   rows={5}
                   className="w-full rounded-md border border-input bg-background px-3 py-2"
                   placeholder="Your message here..."
@@ -173,7 +112,11 @@ export default function Home() {
 
               <div className="flex items-center mb-3">
                 <Mail className="h-5 w-5 mr-2" />
-                <span>contact@example.com</span>
+                <span>visayanjayson01@gmail.com</span>
+              </div>
+              <div className="flex items-center mb-3">
+                <Smartphone className="h-5 w-5 mr-2" />
+                <span>+639754440459</span>
               </div>
             </div>
 
@@ -181,7 +124,7 @@ export default function Home() {
               <h4 className="text-lg font-medium mb-3">Find me on</h4>
               <div className="flex space-x-4">
                 <a
-                  href="https://github.com"
+                  href="https://github.com/visayanjayson"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="hover:text-primary transition-colors"
@@ -189,7 +132,7 @@ export default function Home() {
                   <Github className="h-6 w-6" />
                 </a>
                 <a
-                  href="https://linkedin.com"
+                  href="https://www.linkedin.com/in/jayson-visayan-b7509415a/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="hover:text-primary transition-colors"
@@ -197,12 +140,12 @@ export default function Home() {
                   <Linkedin className="h-6 w-6" />
                 </a>
                 <a
-                  href="https://twitter.com"
+                  href="https://www.upwork.com/freelancers/~01fe567ce7e2067094"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="hover:text-primary transition-colors"
                 >
-                  <Twitter className="h-6 w-6" />
+                  <Briefcase className="h-6 w-6" />
                 </a>
               </div>
             </div>
@@ -213,7 +156,7 @@ export default function Home() {
       {/* Footer */}
       <footer className="w-full bg-muted py-6 mt-12">
         <div className="max-w-6xl mx-auto px-4 text-center">
-          <p>© {new Date().getFullYear()} Your Name. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} Jayson Visayan. All rights reserved.</p>
         </div>
       </footer>
     </main>
