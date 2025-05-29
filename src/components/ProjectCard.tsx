@@ -10,6 +10,16 @@ import { Badge } from "@/components/ui/badge";
 import { ExternalLink, Github } from "lucide-react";
 import Image from "next/image";
 
+interface Project {
+  id: string;
+  title: string;
+  description: string;
+  imageUrl: string;
+  technologies: string[];
+  demoUrl?: string;
+  githubUrl: string;
+  category: string;
+}
 interface ProjectCardProps {
   title: string;
   description: string;
@@ -17,6 +27,8 @@ interface ProjectCardProps {
   technologies: string[];
   demoUrl?: string;
   githubUrl?: string;
+  key?: string;
+  project?: Project;
 }
 
 const ProjectCard = ({
@@ -25,7 +37,7 @@ const ProjectCard = ({
   imageUrl = "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&q=80",
   technologies = ["React", "TypeScript", "Tailwind CSS"],
   demoUrl = "https://example.com",
-  githubUrl = "https://github.com/username/repo",
+  githubUrl = "https://github.com/username/repo"
 }: ProjectCardProps) => {
   return (
     <Card className="overflow-hidden flex flex-col h-full bg-card border-border hover:shadow-lg transition-shadow duration-300">
