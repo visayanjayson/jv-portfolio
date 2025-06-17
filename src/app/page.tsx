@@ -1,7 +1,7 @@
 import React from "react";
 import HeroSection from "@/components/HeroSection";
 import ProjectsSection from "@/components/ProjectsSection";
-import ExperienceSection from "@/components/ExperienceSection";
+import { ExperienceSection } from "@/components/ExperienceSection";
 import SkillSection from "@/components/SkillSection";
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
